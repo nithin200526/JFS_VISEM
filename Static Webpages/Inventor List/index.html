@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Language Inventors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Programming Language Inventors</h1>
+
+    <div class="controls">
+        <label for="inventor">Select a Programming Language Inventor:</label>
+        <select id="inventor" aria-label="Select inventor">
+            <option value="">-- choose an inventor --</option>
+            <option value="dennis_ritchie">Dennis Ritchie (C)</option>
+            <option value="james_gosling">James Gosling (Java)</option>
+            <option value="guido_van_rossum">Guido van Rossum (Python)</option>
+            <option value="bjarne_stroustrup">Bjarne Stroustrup (C++)</option>
+            <option value="john_backus">John Backus (FORTRAN)</option>
+            <option value="anders_hejlsberg">Anders Hejlsberg (C#)</option>
+            <option value="brendan_eich">Brendan Eich (JavaScript)</option>
+            <option value="yukihiro_matz">Yukihiro "Matz" Matsumoto (Ruby)</option>
+            <option value="grace_hopper">Grace Hopper (COBOL)</option>
+            <option value="niklaus_wirth">Niklaus Wirth (Pascal)</option>
+        </select>
+    </div>
+
+    <div class="panel">
+        <div class="portrait" id="portrait">
+            <div class="placeholder" id="portraitPlaceholder">No image</div>
+        </div>
+        <div class="info" id="info">
+            <p class="placeholder" id="about">Choose an inventor from the dropdown to see a portrait and a short two-line description.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
