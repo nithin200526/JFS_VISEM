@@ -31,6 +31,8 @@ var inventors = {
 
         function showPlaceholder() {
             portrait.innerHTML = '<div class="placeholder">No image</div>';
+            // reset to circular by default
+            portrait.style.borderRadius = '50%';
             about.className = 'placeholder';
             about.textContent = 'Choose an inventor from the dropdown to see a portrait and a short two-line description.';
         }
@@ -60,6 +62,13 @@ var inventors = {
             var person = inventors[key];
             portrait.innerHTML = ''; // clear
 
+            // If James Gosling is selected, make portrait square; otherwise circular
+            if (key === 'james_gosling') {
+                portrait.style.borderRadius = '6px';
+            } else {
+                portrait.style.borderRadius = '50%';
+            }
+
             // Try to fetch from Wikipedia
             fetchWikipediaImage(person.wiki, function (imageUrl) {
                 var img = document.createElement('img');
@@ -67,8 +76,9 @@ var inventors = {
                 img.alt = person.name + ' portrait';
                 portrait.appendChild(img);
             }, function () {
-                // on error or no image, show placeholder
+                // on error or no image, show placeholder and reset to circular
                 portrait.innerHTML = '<div class="placeholder">No image</div>';
+                portrait.style.borderRadius = '50%';
             });
 
             // update about text (kept short)
