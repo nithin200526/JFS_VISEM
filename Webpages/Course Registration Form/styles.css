@@ -182,6 +182,22 @@ button:disabled {
     margin-top: 8px;
 }
 
+/* Styling for the ordered list of registered courses */
+.registered-courses {
+    margin: 8px 0 0 20px;
+    padding: 0 0 0 0;
+}
+
+.registered-courses li {
+    margin: 4px 0;
+}
+
+.course-price-inline {
+    color: #667eea;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 25px;

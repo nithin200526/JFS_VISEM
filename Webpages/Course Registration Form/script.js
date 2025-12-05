@@ -53,9 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
 
         const studentName = studentNameInput.value.trim();
-        const selectedCourses = Array.from(checkboxes)
+        const selected = Array.from(checkboxes)
             .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value);
+            .map(checkbox => ({
+                name: checkbox.value,
+                price: parseInt(checkbox.getAttribute('data-price'), 10)
+            }));
         const totalFees = calculateTotalFees();
 
         // Validation
@@ -64,19 +67,24 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        if (selectedCourses.length === 0) {
+        if (selected.length === 0) {
             alert('Please select at least one course');
             return;
         }
 
-        // Display success message below the form (instead of alert)
+        // Display success message below the form (ordered list with prices)
         const resultDiv = document.getElementById('registrationResult');
         const timestamp = new Date().toLocaleString();
+
+        const coursesListHtml = selected.map(c => `\n                <li>${c.name} <span class="course-price-inline">(${c.price}/-)</span></li>`).join('');
+
         const resultHtml = `
             <div class="result success">
                 <h3>Registration Successful</h3>
                 <p><strong>Student Name:</strong> ${studentName}</p>
-                <p><strong>Courses:</strong> ${selectedCourses.join(', ')}</p>
+                <p><strong>Courses:</strong></p>
+                <ol class="registered-courses">${coursesListHtml}
+                </ol>
                 <p><strong>Total Fees:</strong> ${totalFees}/-</p>
                 <p class="small">Registered at: ${timestamp}</p>
             </div>
