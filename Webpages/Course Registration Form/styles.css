@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background: linear-gradient(135deg, #64a5ff 0%, #a888ff 100%); */
+    background-color: rgb(131, 182, 255);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 28px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    color: #555;
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.subject-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.course-item:hover {
+    background-color: #e9ecef;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+.course-item label {
+    flex: 1;
+    margin: 0;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.course-name {
+    color: #333;
+    font-weight: 600;
+}
+
+.course-price {
+    color: #667eea;
+    font-weight: 600;
+}
+
+p {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    border-left: 4px solid #667eea;
+}
+
+#totalFees {
+    color: #667eea;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background: linear-gradient(135deg, #ccc 0%, #aaa 100%);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Result box shown after successful registration */
+.result-box {
+    margin-top: 20px;
+}
+
+.result {
+    background-color: #f8f9ff;
+    padding: 14px;
+    border-radius: 6px;
+    border-left: 4px solid #667eea;
+    color: #2d2d2d;
+}
+
+.result.success h3 {
+    margin: 0 0 8px 0;
+    color: #667eea;
+    font-size: 18px;
+}
+
+.result p {
+    margin: 6px 0;
+}
+
+.result .small {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    form {
+        gap: 15px;
+    }
+}
